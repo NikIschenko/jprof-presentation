@@ -8,7 +8,6 @@ import { WithEntitiesTestModule } from '../../../test.module';
 import { CommunityMeetingFacesDialogComponent } from '../../../../../../main/webapp/app/entities/community-meeting-faces/community-meeting-faces-dialog.component';
 import { CommunityMeetingFacesService } from '../../../../../../main/webapp/app/entities/community-meeting-faces/community-meeting-faces.service';
 import { CommunityMeetingFaces } from '../../../../../../main/webapp/app/entities/community-meeting-faces/community-meeting-faces.model';
-import { MeetupMeetingFacesService } from '../../../../../../main/webapp/app/entities/meetup-meeting-faces';
 
 describe('Component Tests', () => {
 
@@ -24,7 +23,6 @@ describe('Component Tests', () => {
                 imports: [WithEntitiesTestModule],
                 declarations: [CommunityMeetingFacesDialogComponent],
                 providers: [
-                    MeetupMeetingFacesService,
                     CommunityMeetingFacesService
                 ]
             })

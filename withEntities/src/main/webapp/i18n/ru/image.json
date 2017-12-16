@@ -17,8 +17,7 @@
             },
             "imageUrl": "Image Url",
             "date": "Date",
-            "meetup": "Meetup",
-            "face": "Face"
+            "meetup": "Meetup"
         }
     }
 }

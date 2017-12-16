@@ -32,10 +32,10 @@
         </div>
 
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="withEntitiesApp.image.face" for="field_face">Face</label>
-            <select class="form-control" id="field_face" name="face" [(ngModel)]="image.faceId" >
+            <label class="form-control-label" jhiTranslate="withEntitiesApp.image.meetup" for="field_meetup">Meetup</label>
+            <select class="form-control" id="field_meetup" name="meetup" [(ngModel)]="image.meetupId" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="faceOption.id" *ngFor="let faceOption of faces; trackBy: trackFaceById">{{faceOption.id}}</option>
+                <option [ngValue]="meetupOption.id" *ngFor="let meetupOption of meetups; trackBy: trackMeetupById">{{meetupOption.id}}</option>
             </select>
         </div>
     </div>

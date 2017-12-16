@@ -15,43 +15,28 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity Face.
+        Added the entity Meetup.
     -->
-    <changeSet id="20171216161548-1" author="jhipster">
-        <createTable tableName="face">
+    <changeSet id="20171216170023-1" author="jhipster">
+        <createTable tableName="meetup">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="face_id" type="varchar(255)">
+            <column name="meetup_name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
-            <column name="jhi_top" type="integer">
+            <column name="jhi_date" type="timestamp">
                 <constraints nullable="true" />
             </column>
 
-            <column name="jhi_left" type="integer">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="width" type="integer">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="height" type="integer">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="gender" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="age" type="double">
+            <column name="community_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
+        <dropDefaultValue tableName="meetup" columnName="jhi_date" columnDataType="datetime"/>
         
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->

@@ -3,8 +3,6 @@ package by.issoft.service.dto;
 
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -16,8 +14,6 @@ public class CommunityDTO implements Serializable {
 
     @NotNull
     private String communityName;
-
-    private Long meetupId;
 
     public Long getId() {
         return id;
@@ -33,14 +29,6 @@ public class CommunityDTO implements Serializable {
 
     public void setCommunityName(String communityName) {
         this.communityName = communityName;
-    }
-
-    public Long getMeetupId() {
-        return meetupId;
-    }
-
-    public void setMeetupId(Long meetupId) {
-        this.meetupId = meetupId;
     }
 
     @Override

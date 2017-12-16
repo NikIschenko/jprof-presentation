@@ -43,12 +43,9 @@ public class CacheConfiguration {
             cm.createCache(by.issoft.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(by.issoft.domain.Community.class.getName(), jcacheConfiguration);
             cm.createCache(by.issoft.domain.Meetup.class.getName(), jcacheConfiguration);
-            cm.createCache(by.issoft.domain.Meetup.class.getName() + ".communities", jcacheConfiguration);
             cm.createCache(by.issoft.domain.Meetup.class.getName() + ".speakers", jcacheConfiguration);
             cm.createCache(by.issoft.domain.Image.class.getName(), jcacheConfiguration);
-            cm.createCache(by.issoft.domain.Image.class.getName() + ".meetups", jcacheConfiguration);
             cm.createCache(by.issoft.domain.Face.class.getName(), jcacheConfiguration);
-            cm.createCache(by.issoft.domain.Face.class.getName() + ".images", jcacheConfiguration);
             cm.createCache(by.issoft.domain.Speaker.class.getName(), jcacheConfiguration);
             cm.createCache(by.issoft.domain.Speaker.class.getName() + ".meetups", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry

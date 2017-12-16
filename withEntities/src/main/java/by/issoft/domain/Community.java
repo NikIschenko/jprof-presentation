@@ -27,9 +27,6 @@ public class Community implements Serializable {
     @Column(name = "community_name", nullable = false)
     private String communityName;
 
-    @ManyToOne
-    private Meetup meetup;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -50,19 +47,6 @@ public class Community implements Serializable {
 
     public void setCommunityName(String communityName) {
         this.communityName = communityName;
-    }
-
-    public Meetup getMeetup() {
-        return meetup;
-    }
-
-    public Community meetup(Meetup meetup) {
-        this.meetup = meetup;
-        return this;
-    }
-
-    public void setMeetup(Meetup meetup) {
-        this.meetup = meetup;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

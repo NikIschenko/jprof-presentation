@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <!--
-        Added the constraints for entity Image.
+        Added the constraints for entity Face.
     -->
-    <changeSet id="20171216161547-2" author="jhipster">
+    <changeSet id="20171216170025-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="face_id"
-                                 baseTableName="image"
-                                 constraintName="fk_image_face_id"
+        <addForeignKeyConstraint baseColumnNames="image_id"
+                                 baseTableName="face"
+                                 constraintName="fk_face_image_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="face"/>
+                                 referencedTableName="image"/>
 
     </changeSet>
 </databaseChangeLog>

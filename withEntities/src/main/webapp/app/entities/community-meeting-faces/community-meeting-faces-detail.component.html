@@ -8,12 +8,6 @@
         <dd>
             <span>{{community.communityName}}</span>
         </dd>
-        <dt><span jhiTranslate="withEntitiesApp.community.meetup">Meetup</span></dt>
-        <dd>
-            <div *ngIf="community.meetupId">
-                <a [routerLink]="['/meetup-meeting-faces', community.meetupId]">{{community.meetupId}}</a>
-            </div>
-        </dd>
     </dl>
 
     <button type="submit"

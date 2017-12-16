@@ -1,13 +1,6 @@
 {
     "fluentMethods": true,
-    "relationships": [
-        {
-            "relationshipName": "meetup",
-            "otherEntityName": "meetup",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
+    "relationships": [],
     "fields": [
         {
             "fieldName": "communityName",
@@ -17,7 +10,7 @@
             ]
         }
     ],
-    "changelogDate": "20171216161545",
+    "changelogDate": "20171216170022",
     "entityTableName": "community",
     "dto": "mapstruct",
     "pagination": "no",

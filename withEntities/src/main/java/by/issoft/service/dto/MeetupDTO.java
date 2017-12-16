@@ -20,7 +20,7 @@ public class MeetupDTO implements Serializable {
 
     private Instant date;
 
-    private Long imageId;
+    private Long communityId;
 
     public Long getId() {
         return id;
@@ -46,12 +46,12 @@ public class MeetupDTO implements Serializable {
         this.date = date;
     }
 
-    public Long getImageId() {
-        return imageId;
+    public Long getCommunityId() {
+        return communityId;
     }
 
-    public void setImageId(Long imageId) {
-        this.imageId = imageId;
+    public void setCommunityId(Long communityId) {
+        this.communityId = communityId;
     }
 
     @Override

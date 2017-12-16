@@ -4,11 +4,13 @@ import { Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiEventManager } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { FaceMeetingFaces } from './face-meeting-faces.model';
 import { FaceMeetingFacesPopupService } from './face-meeting-faces-popup.service';
 import { FaceMeetingFacesService } from './face-meeting-faces.service';
+import { ImageMeetingFaces, ImageMeetingFacesService } from '../image-meeting-faces';
+import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-face-meeting-faces-dialog',
@@ -19,15 +21,21 @@ export class FaceMeetingFacesDialogComponent implements OnInit {
     face: FaceMeetingFaces;
     isSaving: boolean;
 
+    images: ImageMeetingFaces[];
+
     constructor(
         public activeModal: NgbActiveModal,
+        private jhiAlertService: JhiAlertService,
         private faceService: FaceMeetingFacesService,
+        private imageService: ImageMeetingFacesService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
+        this.imageService.query()
+            .subscribe((res: ResponseWrapper) => { this.images = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -58,6 +66,14 @@ export class FaceMeetingFacesDialogComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
+    }
+
+    private onError(error: any) {
+        this.jhiAlertService.error(error.message, null, null);
+    }
+
+    trackImageById(index: number, item: ImageMeetingFaces) {
+        return item.id;
     }
 }
 

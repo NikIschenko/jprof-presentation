@@ -15,28 +15,34 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity Image.
+        Added the entity Speaker.
     -->
-    <changeSet id="20171216161547-1" author="jhipster">
-        <createTable tableName="image">
+    <changeSet id="20171216170026-1" author="jhipster">
+        <createTable tableName="speaker">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="image_url" type="varchar(255)">
+            <column name="speaker_name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
-            <column name="jhi_date" type="timestamp">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="face_id" type="bigint">
+            <column name="email" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="image" columnName="jhi_date" columnDataType="datetime"/>
+        
+        <createTable tableName="speaker_meetup">
+            <column name="meetups_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="speakers_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="speakers_id, meetups_id" tableName="speaker_meetup"/>
         
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->

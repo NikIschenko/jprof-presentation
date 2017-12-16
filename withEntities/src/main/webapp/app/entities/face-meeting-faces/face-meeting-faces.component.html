@@ -24,6 +24,7 @@
             <th jhiSortBy="height"><span jhiTranslate="withEntitiesApp.face.height">Height</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="gender"><span jhiTranslate="withEntitiesApp.face.gender">Gender</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="age"><span jhiTranslate="withEntitiesApp.face.age">Age</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="imageId"><span jhiTranslate="withEntitiesApp.face.image">Image</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -37,6 +38,11 @@
                 <td>{{face.height}}</td>
                 <td jhiTranslate="{{'withEntitiesApp.Gender.' + face.gender}}">{{face.gender}}</td>
                 <td>{{face.age}}</td>
+                <td>
+                    <div *ngIf="face.imageId">
+                        <a [routerLink]="['../image-meeting-faces', face.imageId  ]" >{{face.imageId}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

@@ -23,7 +23,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20171216161549",
+    "changelogDate": "20171216170026",
     "entityTableName": "speaker",
     "dto": "mapstruct",
     "pagination": "no",

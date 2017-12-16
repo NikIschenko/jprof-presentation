@@ -1,6 +1,5 @@
 package by.issoft.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,8 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 import by.issoft.domain.enumeration.Gender;
@@ -51,10 +48,8 @@ public class Face implements Serializable {
     @Column(name = "age")
     private Double age;
 
-    @OneToMany(mappedBy = "face")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Image> images = new HashSet<>();
+    @ManyToOne
+    private Image image;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -156,29 +151,17 @@ public class Face implements Serializable {
         this.age = age;
     }
 
-    public Set<Image> getImages() {
-        return images;
+    public Image getImage() {
+        return image;
     }
 
-    public Face images(Set<Image> images) {
-        this.images = images;
+    public Face image(Image image) {
+        this.image = image;
         return this;
     }
 
-    public Face addImage(Image image) {
-        this.images.add(image);
-        image.setFace(this);
-        return this;
-    }
-
-    public Face removeImage(Image image) {
-        this.images.remove(image);
-        image.setFace(null);
-        return this;
-    }
-
-    public void setImages(Set<Image> images) {
-        this.images = images;
+    public void setImage(Image image) {
+        this.image = image;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

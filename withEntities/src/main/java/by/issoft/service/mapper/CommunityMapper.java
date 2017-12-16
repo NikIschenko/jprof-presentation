@@ -8,14 +8,12 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Community and its DTO CommunityDTO.
  */
-@Mapper(componentModel = "spring", uses = {MeetupMapper.class})
+@Mapper(componentModel = "spring", uses = {})
 public interface CommunityMapper extends EntityMapper<CommunityDTO, Community> {
 
-    @Mapping(source = "meetup.id", target = "meetupId")
-    CommunityDTO toDto(Community community); 
+    
 
-    @Mapping(source = "meetupId", target = "meetup")
-    Community toEntity(CommunityDTO communityDTO);
+    
 
     default Community fromId(Long id) {
         if (id == null) {

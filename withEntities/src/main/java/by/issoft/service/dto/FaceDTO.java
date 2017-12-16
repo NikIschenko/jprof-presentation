@@ -30,6 +30,8 @@ public class FaceDTO implements Serializable {
 
     private Double age;
 
+    private Long imageId;
+
     public Long getId() {
         return id;
     }
@@ -92,6 +94,14 @@ public class FaceDTO implements Serializable {
 
     public void setAge(Double age) {
         this.age = age;
+    }
+
+    public Long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Long imageId) {
+        this.imageId = imageId;
     }
 
     @Override

@@ -8,14 +8,13 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Image and its DTO ImageDTO.
  */
-@Mapper(componentModel = "spring", uses = {FaceMapper.class})
+@Mapper(componentModel = "spring", uses = {MeetupMapper.class})
 public interface ImageMapper extends EntityMapper<ImageDTO, Image> {
 
-    @Mapping(source = "face.id", target = "faceId")
+    @Mapping(source = "meetup.id", target = "meetupId")
     ImageDTO toDto(Image image); 
 
-    @Mapping(target = "meetups", ignore = true)
-    @Mapping(source = "faceId", target = "face")
+    @Mapping(source = "meetupId", target = "meetup")
     Image toEntity(ImageDTO imageDTO);
 
     default Image fromId(Long id) {

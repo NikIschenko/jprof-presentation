@@ -18,7 +18,6 @@
             <tr>
             <th><span jhiTranslate="global.field.id">ID</span></th>
             <th><span jhiTranslate="withEntitiesApp.community.communityName">Community Name</span></th>
-            <th><span jhiTranslate="withEntitiesApp.community.meetup">Meetup</span></th>
             <th></th>
             </tr>
             </thead>
@@ -26,11 +25,6 @@
             <tr *ngFor="let community of communities ;trackBy: trackId">
                 <td><a [routerLink]="['../community-meeting-faces', community.id ]">{{community.id}}</a></td>
                 <td>{{community.communityName}}</td>
-                <td>
-                    <div *ngIf="community.meetupId">
-                        <a [routerLink]="['../meetup-meeting-faces', community.meetupId  ]" >{{community.meetupId}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

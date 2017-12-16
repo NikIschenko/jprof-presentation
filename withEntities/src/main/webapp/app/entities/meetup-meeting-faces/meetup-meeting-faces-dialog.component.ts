@@ -9,8 +9,8 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { MeetupMeetingFaces } from './meetup-meeting-faces.model';
 import { MeetupMeetingFacesPopupService } from './meetup-meeting-faces-popup.service';
 import { MeetupMeetingFacesService } from './meetup-meeting-faces.service';
+import { CommunityMeetingFaces, CommunityMeetingFacesService } from '../community-meeting-faces';
 import { SpeakerMeetingFaces, SpeakerMeetingFacesService } from '../speaker-meeting-faces';
-import { ImageMeetingFaces, ImageMeetingFacesService } from '../image-meeting-faces';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
@@ -22,26 +22,26 @@ export class MeetupMeetingFacesDialogComponent implements OnInit {
     meetup: MeetupMeetingFaces;
     isSaving: boolean;
 
-    speakers: SpeakerMeetingFaces[];
+    communities: CommunityMeetingFaces[];
 
-    images: ImageMeetingFaces[];
+    speakers: SpeakerMeetingFaces[];
 
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
         private meetupService: MeetupMeetingFacesService,
+        private communityService: CommunityMeetingFacesService,
         private speakerService: SpeakerMeetingFacesService,
-        private imageService: ImageMeetingFacesService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
+        this.communityService.query()
+            .subscribe((res: ResponseWrapper) => { this.communities = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.speakerService.query()
             .subscribe((res: ResponseWrapper) => { this.speakers = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
-        this.imageService.query()
-            .subscribe((res: ResponseWrapper) => { this.images = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -78,11 +78,11 @@ export class MeetupMeetingFacesDialogComponent implements OnInit {
         this.jhiAlertService.error(error.message, null, null);
     }
 
-    trackSpeakerById(index: number, item: SpeakerMeetingFaces) {
+    trackCommunityById(index: number, item: CommunityMeetingFaces) {
         return item.id;
     }
 
-    trackImageById(index: number, item: ImageMeetingFaces) {
+    trackSpeakerById(index: number, item: SpeakerMeetingFaces) {
         return item.id;
     }
 

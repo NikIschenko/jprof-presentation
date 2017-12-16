@@ -33,7 +33,7 @@ entity Speaker {
 
 
 // defining multiple OneToMany relationships with comments
-relationship OneToMany {
+relationship ManyToOne {
 	Meetup{community} to Community,
 	Image{meetup} to Meetup,
     Face{image} to Image

@@ -1,6 +1,5 @@
 package by.issoft.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -9,8 +8,6 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -34,13 +31,8 @@ public class Image implements Serializable {
     @Column(name = "jhi_date")
     private Instant date;
 
-    @OneToMany(mappedBy = "image")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Meetup> meetups = new HashSet<>();
-
     @ManyToOne
-    private Face face;
+    private Meetup meetup;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -77,42 +69,17 @@ public class Image implements Serializable {
         this.date = date;
     }
 
-    public Set<Meetup> getMeetups() {
-        return meetups;
+    public Meetup getMeetup() {
+        return meetup;
     }
 
-    public Image meetups(Set<Meetup> meetups) {
-        this.meetups = meetups;
+    public Image meetup(Meetup meetup) {
+        this.meetup = meetup;
         return this;
     }
 
-    public Image addMeetup(Meetup meetup) {
-        this.meetups.add(meetup);
-        meetup.setImage(this);
-        return this;
-    }
-
-    public Image removeMeetup(Meetup meetup) {
-        this.meetups.remove(meetup);
-        meetup.setImage(null);
-        return this;
-    }
-
-    public void setMeetups(Set<Meetup> meetups) {
-        this.meetups = meetups;
-    }
-
-    public Face getFace() {
-        return face;
-    }
-
-    public Image face(Face face) {
-        this.face = face;
-        return this;
-    }
-
-    public void setFace(Face face) {
-        this.face = face;
+    public void setMeetup(Meetup meetup) {
+        this.meetup = meetup;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -4,13 +4,11 @@ import { Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
+import { JhiEventManager } from 'ng-jhipster';
 
 import { CommunityMeetingFaces } from './community-meeting-faces.model';
 import { CommunityMeetingFacesPopupService } from './community-meeting-faces-popup.service';
 import { CommunityMeetingFacesService } from './community-meeting-faces.service';
-import { MeetupMeetingFaces, MeetupMeetingFacesService } from '../meetup-meeting-faces';
-import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-community-meeting-faces-dialog',
@@ -21,21 +19,15 @@ export class CommunityMeetingFacesDialogComponent implements OnInit {
     community: CommunityMeetingFaces;
     isSaving: boolean;
 
-    meetups: MeetupMeetingFaces[];
-
     constructor(
         public activeModal: NgbActiveModal,
-        private jhiAlertService: JhiAlertService,
         private communityService: CommunityMeetingFacesService,
-        private meetupService: MeetupMeetingFacesService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
-        this.meetupService.query()
-            .subscribe((res: ResponseWrapper) => { this.meetups = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -66,14 +58,6 @@ export class CommunityMeetingFacesDialogComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
-    }
-
-    private onError(error: any) {
-        this.jhiAlertService.error(error.message, null, null);
-    }
-
-    trackMeetupById(index: number, item: MeetupMeetingFaces) {
-        return item.id;
     }
 }
 

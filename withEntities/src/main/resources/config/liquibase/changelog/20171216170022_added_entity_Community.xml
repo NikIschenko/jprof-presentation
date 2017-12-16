@@ -17,17 +17,13 @@
     <!--
         Added the entity Community.
     -->
-    <changeSet id="20171216161545-1" author="jhipster">
+    <changeSet id="20171216170022-1" author="jhipster">
         <createTable tableName="community">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="community_name" type="varchar(255)">
                 <constraints nullable="false" />
-            </column>
-
-            <column name="meetup_id" type="bigint">
-                <constraints nullable="true" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->

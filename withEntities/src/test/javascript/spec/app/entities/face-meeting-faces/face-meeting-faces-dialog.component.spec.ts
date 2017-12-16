@@ -8,6 +8,7 @@ import { WithEntitiesTestModule } from '../../../test.module';
 import { FaceMeetingFacesDialogComponent } from '../../../../../../main/webapp/app/entities/face-meeting-faces/face-meeting-faces-dialog.component';
 import { FaceMeetingFacesService } from '../../../../../../main/webapp/app/entities/face-meeting-faces/face-meeting-faces.service';
 import { FaceMeetingFaces } from '../../../../../../main/webapp/app/entities/face-meeting-faces/face-meeting-faces.model';
+import { ImageMeetingFacesService } from '../../../../../../main/webapp/app/entities/image-meeting-faces';
 
 describe('Component Tests', () => {
 
@@ -23,6 +24,7 @@ describe('Component Tests', () => {
                 imports: [WithEntitiesTestModule],
                 declarations: [FaceMeetingFacesDialogComponent],
                 providers: [
+                    ImageMeetingFacesService,
                     FaceMeetingFacesService
                 ]
             })

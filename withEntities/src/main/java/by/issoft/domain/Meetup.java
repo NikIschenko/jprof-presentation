@@ -34,18 +34,13 @@ public class Meetup implements Serializable {
     @Column(name = "jhi_date")
     private Instant date;
 
-    @OneToMany(mappedBy = "meetup")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Community> communities = new HashSet<>();
+    @ManyToOne
+    private Community community;
 
     @ManyToMany(mappedBy = "meetups")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Speaker> speakers = new HashSet<>();
-
-    @ManyToOne
-    private Image image;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -82,29 +77,17 @@ public class Meetup implements Serializable {
         this.date = date;
     }
 
-    public Set<Community> getCommunities() {
-        return communities;
+    public Community getCommunity() {
+        return community;
     }
 
-    public Meetup communities(Set<Community> communities) {
-        this.communities = communities;
+    public Meetup community(Community community) {
+        this.community = community;
         return this;
     }
 
-    public Meetup addCommunity(Community community) {
-        this.communities.add(community);
-        community.setMeetup(this);
-        return this;
-    }
-
-    public Meetup removeCommunity(Community community) {
-        this.communities.remove(community);
-        community.setMeetup(null);
-        return this;
-    }
-
-    public void setCommunities(Set<Community> communities) {
-        this.communities = communities;
+    public void setCommunity(Community community) {
+        this.community = community;
     }
 
     public Set<Speaker> getSpeakers() {
@@ -130,19 +113,6 @@ public class Meetup implements Serializable {
 
     public void setSpeakers(Set<Speaker> speakers) {
         this.speakers = speakers;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
-    public Meetup image(Image image) {
-        this.image = image;
-        return this;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

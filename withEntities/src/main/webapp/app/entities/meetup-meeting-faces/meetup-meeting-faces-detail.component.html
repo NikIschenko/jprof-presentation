@@ -12,10 +12,10 @@
         <dd>
             <span>{{meetup.date | date:'medium'}}</span>
         </dd>
-        <dt><span jhiTranslate="withEntitiesApp.meetup.image">Image</span></dt>
+        <dt><span jhiTranslate="withEntitiesApp.meetup.community">Community</span></dt>
         <dd>
-            <div *ngIf="meetup.imageId">
-                <a [routerLink]="['/image-meeting-faces', meetup.imageId]">{{meetup.imageId}}</a>
+            <div *ngIf="meetup.communityId">
+                <a [routerLink]="['/community-meeting-faces', meetup.communityId]">{{meetup.communityId}}</a>
             </div>
         </dd>
     </dl>

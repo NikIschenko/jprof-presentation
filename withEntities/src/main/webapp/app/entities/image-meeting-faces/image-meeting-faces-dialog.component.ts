@@ -9,7 +9,7 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { ImageMeetingFaces } from './image-meeting-faces.model';
 import { ImageMeetingFacesPopupService } from './image-meeting-faces-popup.service';
 import { ImageMeetingFacesService } from './image-meeting-faces.service';
-import { FaceMeetingFaces, FaceMeetingFacesService } from '../face-meeting-faces';
+import { MeetupMeetingFaces, MeetupMeetingFacesService } from '../meetup-meeting-faces';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
@@ -21,21 +21,21 @@ export class ImageMeetingFacesDialogComponent implements OnInit {
     image: ImageMeetingFaces;
     isSaving: boolean;
 
-    faces: FaceMeetingFaces[];
+    meetups: MeetupMeetingFaces[];
 
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
         private imageService: ImageMeetingFacesService,
-        private faceService: FaceMeetingFacesService,
+        private meetupService: MeetupMeetingFacesService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
-        this.faceService.query()
-            .subscribe((res: ResponseWrapper) => { this.faces = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+        this.meetupService.query()
+            .subscribe((res: ResponseWrapper) => { this.meetups = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -72,7 +72,7 @@ export class ImageMeetingFacesDialogComponent implements OnInit {
         this.jhiAlertService.error(error.message, null, null);
     }
 
-    trackFaceById(index: number, item: FaceMeetingFaces) {
+    trackMeetupById(index: number, item: MeetupMeetingFaces) {
         return item.id;
     }
 }

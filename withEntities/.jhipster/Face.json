@@ -2,10 +2,10 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "image",
             "otherEntityName": "image",
-            "otherEntityRelationshipName": "face"
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -42,7 +42,7 @@
             "fieldType": "Double"
         }
     ],
-    "changelogDate": "20171216161548",
+    "changelogDate": "20171216170025",
     "entityTableName": "face",
     "dto": "mapstruct",
     "pagination": "infinite-scroll",

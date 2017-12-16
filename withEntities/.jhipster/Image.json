@@ -2,15 +2,9 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "meetup",
             "otherEntityName": "meetup",
-            "otherEntityRelationshipName": "image"
-        },
-        {
-            "relationshipName": "face",
-            "otherEntityName": "face",
-            "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],
@@ -27,7 +21,7 @@
             "fieldType": "Instant"
         }
     ],
-    "changelogDate": "20171216161547",
+    "changelogDate": "20171216170024",
     "entityTableName": "image",
     "dto": "mapstruct",
     "pagination": "pagination",

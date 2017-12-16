@@ -5,9 +5,8 @@ export class MeetupMeetingFaces implements BaseEntity {
         public id?: number,
         public meetupName?: string,
         public date?: any,
-        public communities?: BaseEntity[],
+        public communityId?: number,
         public speakers?: BaseEntity[],
-        public imageId?: number,
     ) {
     }
 }

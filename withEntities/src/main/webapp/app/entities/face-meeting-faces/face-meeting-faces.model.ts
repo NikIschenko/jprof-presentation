@@ -15,7 +15,7 @@ export class FaceMeetingFaces implements BaseEntity {
         public height?: number,
         public gender?: Gender,
         public age?: number,
-        public images?: BaseEntity[],
+        public imageId?: number,
     ) {
     }
 }

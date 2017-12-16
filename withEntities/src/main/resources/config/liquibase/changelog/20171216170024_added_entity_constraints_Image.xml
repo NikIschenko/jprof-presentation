@@ -4,13 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <!--
-        Added the constraints for entity Community.
+        Added the constraints for entity Image.
     -->
-    <changeSet id="20171216161545-2" author="jhipster">
+    <changeSet id="20171216170024-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="meetup_id"
-                                 baseTableName="community"
-                                 constraintName="fk_community_meetup_id"
+                                 baseTableName="image"
+                                 constraintName="fk_image_meetup_id"
                                  referencedColumnNames="id"
                                  referencedTableName="meetup"/>
 

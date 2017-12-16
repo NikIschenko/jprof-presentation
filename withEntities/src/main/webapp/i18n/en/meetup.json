@@ -18,8 +18,7 @@
             "meetupName": "Meetup Name",
             "date": "Date",
             "community": "Community",
-            "speaker": "Speaker",
-            "image": "Image"
+            "speaker": "Speaker"
         }
     }
 }

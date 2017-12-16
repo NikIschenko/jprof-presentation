@@ -6,13 +6,13 @@
     <!--
         Added the constraints for entity Meetup.
     -->
-    <changeSet id="20171216161546-2" author="jhipster">
+    <changeSet id="20171216170023-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="image_id"
+        <addForeignKeyConstraint baseColumnNames="community_id"
                                  baseTableName="meetup"
-                                 constraintName="fk_meetup_image_id"
+                                 constraintName="fk_meetup_community_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="image"/>
+                                 referencedTableName="community"/>
 
     </changeSet>
 </databaseChangeLog>

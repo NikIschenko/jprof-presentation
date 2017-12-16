@@ -19,7 +19,7 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="meetupName"><span jhiTranslate="withEntitiesApp.meetup.meetupName">Meetup Name</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="date"><span jhiTranslate="withEntitiesApp.meetup.date">Date</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="imageId"><span jhiTranslate="withEntitiesApp.meetup.image">Image</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="communityId"><span jhiTranslate="withEntitiesApp.meetup.community">Community</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -29,8 +29,8 @@
                 <td>{{meetup.meetupName}}</td>
                 <td>{{meetup.date | date:'medium'}}</td>
                 <td>
-                    <div *ngIf="meetup.imageId">
-                        <a [routerLink]="['../image-meeting-faces', meetup.imageId  ]" >{{meetup.imageId}}</a>
+                    <div *ngIf="meetup.communityId">
+                        <a [routerLink]="['../community-meeting-faces', meetup.communityId  ]" >{{meetup.communityId}}</a>
                     </div>
                 </td>
                 <td class="text-right">

@@ -2,10 +2,10 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "community",
             "otherEntityName": "community",
-            "otherEntityRelationshipName": "meetup"
+            "otherEntityField": "id"
         },
         {
             "relationshipType": "many-to-many",
@@ -13,12 +13,6 @@
             "otherEntityName": "speaker",
             "ownerSide": false,
             "otherEntityRelationshipName": "meetup"
-        },
-        {
-            "relationshipName": "image",
-            "otherEntityName": "image",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -34,7 +28,7 @@
             "fieldType": "Instant"
         }
     ],
-    "changelogDate": "20171216161546",
+    "changelogDate": "20171216170023",
     "entityTableName": "meetup",
     "dto": "mapstruct",
     "pagination": "pagination",

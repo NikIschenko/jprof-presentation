@@ -8,8 +8,8 @@ import { WithEntitiesTestModule } from '../../../test.module';
 import { MeetupMeetingFacesDialogComponent } from '../../../../../../main/webapp/app/entities/meetup-meeting-faces/meetup-meeting-faces-dialog.component';
 import { MeetupMeetingFacesService } from '../../../../../../main/webapp/app/entities/meetup-meeting-faces/meetup-meeting-faces.service';
 import { MeetupMeetingFaces } from '../../../../../../main/webapp/app/entities/meetup-meeting-faces/meetup-meeting-faces.model';
+import { CommunityMeetingFacesService } from '../../../../../../main/webapp/app/entities/community-meeting-faces';
 import { SpeakerMeetingFacesService } from '../../../../../../main/webapp/app/entities/speaker-meeting-faces';
-import { ImageMeetingFacesService } from '../../../../../../main/webapp/app/entities/image-meeting-faces';
 
 describe('Component Tests', () => {
 
@@ -25,8 +25,8 @@ describe('Component Tests', () => {
                 imports: [WithEntitiesTestModule],
                 declarations: [MeetupMeetingFacesDialogComponent],
                 providers: [
+                    CommunityMeetingFacesService,
                     SpeakerMeetingFacesService,
-                    ImageMeetingFacesService,
                     MeetupMeetingFacesService
                 ]
             })
