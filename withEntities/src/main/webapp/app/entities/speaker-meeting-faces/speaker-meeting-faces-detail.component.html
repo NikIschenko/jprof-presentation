@@ -1,0 +1,36 @@
+
+<div *ngIf="speaker">
+    <h2><span jhiTranslate="withEntitiesApp.speaker.detail.title">Speaker</span> {{speaker.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="withEntitiesApp.speaker.speakerName">Speaker Name</span></dt>
+        <dd>
+            <span>{{speaker.speakerName}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.speaker.email">Email</span></dt>
+        <dd>
+            <span>{{speaker.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.speaker.meetup">Meetup</span></dt>
+        <dd>
+            <span *ngFor="let meetup of speaker.meetups; let last = last">
+                <a [routerLink]="['/meetup-meeting-faces', meetup?.id ]">{{meetup.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'speaker-meeting-faces/'+ speaker.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

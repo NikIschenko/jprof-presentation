@@ -1,0 +1,25 @@
+{
+    "withEntitiesApp": {
+        "meetup" : {
+            "home": {
+                "title": "Meetups",
+                "createLabel": "Create a new Meetup",
+                "createOrEditLabel": "Create or edit a Meetup"
+            },
+            "created": "A new Meetup is created with identifier {{ param }}",
+            "updated": "A Meetup is updated with identifier {{ param }}",
+            "deleted": "A Meetup is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Meetup {{ id }}?"
+            },
+            "detail": {
+                "title": "Meetup"
+            },
+            "meetupName": "Meetup Name",
+            "date": "Date",
+            "community": "Community",
+            "speaker": "Speaker",
+            "image": "Image"
+        }
+    }
+}

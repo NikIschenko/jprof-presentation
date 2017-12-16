@@ -1,0 +1,22 @@
+{
+    "withEntitiesApp": {
+        "community" : {
+            "home": {
+                "title": "Communities",
+                "createLabel": "Создать новый Community",
+                "createOrEditLabel": "Создать или отредактировать Community"
+            },
+            "created": "Новый Community создан с идентификатором {{ param }}",
+            "updated": "Community обновлен с идентификатором {{ param }}",
+            "deleted": "Community удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Community {{ id }}?"
+            },
+            "detail": {
+                "title": "Community"
+            },
+            "communityName": "Community Name",
+            "meetup": "Meetup"
+        }
+    }
+}

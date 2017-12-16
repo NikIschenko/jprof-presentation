@@ -1,0 +1,36 @@
+
+<div *ngIf="meetup">
+    <h2><span jhiTranslate="withEntitiesApp.meetup.detail.title">Meetup</span> {{meetup.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="withEntitiesApp.meetup.meetupName">Meetup Name</span></dt>
+        <dd>
+            <span>{{meetup.meetupName}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.meetup.date">Date</span></dt>
+        <dd>
+            <span>{{meetup.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.meetup.image">Image</span></dt>
+        <dd>
+            <div *ngIf="meetup.imageId">
+                <a [routerLink]="['/image-meeting-faces', meetup.imageId]">{{meetup.imageId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'meetup-meeting-faces/'+ meetup.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

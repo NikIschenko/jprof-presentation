@@ -1,0 +1,23 @@
+{
+    "withEntitiesApp": {
+        "speaker" : {
+            "home": {
+                "title": "Speakers",
+                "createLabel": "Создать новый Speaker",
+                "createOrEditLabel": "Создать или отредактировать Speaker"
+            },
+            "created": "Новый Speaker создан с идентификатором {{ param }}",
+            "updated": "Speaker обновлен с идентификатором {{ param }}",
+            "deleted": "Speaker удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Speaker {{ id }}?"
+            },
+            "detail": {
+                "title": "Speaker"
+            },
+            "speakerName": "Speaker Name",
+            "email": "Email",
+            "meetup": "Meetup"
+        }
+    }
+}

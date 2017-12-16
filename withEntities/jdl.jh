@@ -1,0 +1,56 @@
+enum Gender {
+    MALE, FEMALE
+}
+
+entity Community {
+	communityName String required
+}
+
+entity Meetup {
+	meetupName String required, 
+    date Instant
+}
+
+entity Image {
+	imageUrl String required,
+    date Instant	
+}
+
+entity Face {
+	faceId String required,
+    top Integer,
+    left Integer,
+    width Integer,
+    height Integer,
+    gender Gender,
+    age Double
+}
+
+entity Speaker {
+	speakerName String required,
+    email String 
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Meetup{community} to Community,
+	Image{meetup} to Meetup,
+    Face{image} to Image
+}
+
+relationship ManyToMany {
+	Speaker{meetup} to Meetup{speaker}
+}
+
+
+// Set pagination options
+paginate Face with infinite-scroll
+paginate Image, Meetup with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with meetingFaces

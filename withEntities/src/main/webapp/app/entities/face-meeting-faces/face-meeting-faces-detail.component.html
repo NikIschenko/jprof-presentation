@@ -1,0 +1,50 @@
+
+<div *ngIf="face">
+    <h2><span jhiTranslate="withEntitiesApp.face.detail.title">Face</span> {{face.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="withEntitiesApp.face.faceId">Face Id</span></dt>
+        <dd>
+            <span>{{face.faceId}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.face.top">Top</span></dt>
+        <dd>
+            <span>{{face.top}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.face.left">Left</span></dt>
+        <dd>
+            <span>{{face.left}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.face.width">Width</span></dt>
+        <dd>
+            <span>{{face.width}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.face.height">Height</span></dt>
+        <dd>
+            <span>{{face.height}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.face.gender">Gender</span></dt>
+        <dd>
+            <span jhiTranslate="{{'withEntitiesApp.Gender.' + face.gender}}">{{face.gender}}</span>
+        </dd>
+        <dt><span jhiTranslate="withEntitiesApp.face.age">Age</span></dt>
+        <dd>
+            <span>{{face.age}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'face-meeting-faces/'+ face.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

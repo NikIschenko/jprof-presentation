@@ -1,0 +1,28 @@
+{
+    "withEntitiesApp": {
+        "face" : {
+            "home": {
+                "title": "Faces",
+                "createLabel": "Создать новый Face",
+                "createOrEditLabel": "Создать или отредактировать Face"
+            },
+            "created": "Новый Face создан с идентификатором {{ param }}",
+            "updated": "Face обновлен с идентификатором {{ param }}",
+            "deleted": "Face удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Face {{ id }}?"
+            },
+            "detail": {
+                "title": "Face"
+            },
+            "faceId": "Face Id",
+            "top": "Top",
+            "left": "Left",
+            "width": "Width",
+            "height": "Height",
+            "gender": "Gender",
+            "age": "Age",
+            "image": "Image"
+        }
+    }
+}

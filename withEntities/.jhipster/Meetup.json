@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "community",
+            "otherEntityName": "community",
+            "otherEntityRelationshipName": "meetup"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "speaker",
+            "otherEntityName": "speaker",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "meetup"
+        },
+        {
+            "relationshipName": "image",
+            "otherEntityName": "image",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "meetupName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20171216161546",
+    "entityTableName": "meetup",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "meetingFaces"
+}
